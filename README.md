@@ -132,15 +132,16 @@ The suites are split by concern:
 
 | File | Covers |
 | --- | --- |
-| `test/host.optimize.test.js` | Prompt structure: material before rules, prohibitions last, random delimiters, response cleanup |
-| `test/host.errors.test.js` | Auth, methods, body limits, field limits, validation order, cancellation |
-| `test/host.providers.test.js` | Model catalog filtering, default fallback, provider failures |
-| `test/host.context.test.js` | Long-context summarising, caching, and fallback when it fails |
-| `test/client.composer.test.js` | Reading the draft, the three write-back routes, honest failure |
-| `test/client.context.test.js` | Reading the conversation off screen, truncation, surrogate pairs |
-| `test/client.providers.test.js` | Picker data: filtering, defaults, notices |
-| `test/client.optimize.test.js` | The request itself, errors, cancel, keeping the previous result |
-| `test/client.panel.test.js` | Layout, portal, button ordering, metadata display |
+| `test/host.optimize.test.mjs` | Prompt structure: material before rules, prohibitions last, random delimiters, response cleanup |
+| `test/host.errors.test.mjs` | Auth, methods, body limits, field limits, validation order, cancellation |
+| `test/host.providers.test.mjs` | Model catalog filtering, default fallback, provider failures |
+| `test/host.context.test.mjs` | Long-context summarising, caching, and fallback when it fails |
+| `test/client.composer.test.mjs` | Reading the draft, the three write-back routes, honest failure |
+| `test/client.context.test.mjs` | Reading the conversation off screen, truncation, surrogate pairs |
+| `test/client.providers.test.mjs` | Picker data: filtering, defaults, notices |
+| `test/client.optimize.test.mjs` | The request itself, errors, cancel, keeping the previous result |
+| `test/client.panel.test.mjs` | Layout, portal, button ordering, metadata display |
+| `test/client.lifecycle.test.mjs` | Slot registration, stylesheet ownership through `ctx.effect`, disposal |
 
 ## Limitations
 

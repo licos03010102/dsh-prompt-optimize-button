@@ -79,15 +79,16 @@ npm test
 
 | 文件 | 覆盖内容 |
 | --- | --- |
-| `test/host.optimize.test.js` | 提示词结构：素材在规则之前、禁令在最后、随机分界符、输出清理 |
-| `test/host.errors.test.js` | 鉴权、方法、请求体上限、字段上限、校验顺序、取消 |
-| `test/host.providers.test.js` | 模型目录过滤、默认模型回退、提供方失败 |
-| `test/host.context.test.js` | 长上下文摘要、缓存、摘要失败时的回退 |
-| `test/client.composer.test.js` | 读草稿、三条写回路径、诚实报告失败 |
-| `test/client.context.test.js` | 从界面读对话、截断、代理对不被切断 |
-| `test/client.providers.test.js` | 选择器数据：过滤、默认值、提示语 |
-| `test/client.optimize.test.js` | 请求本身、错误、取消、保住上一次的结果 |
-| `test/client.panel.test.js` | 布局、portal、按钮顺序、元信息展示 |
+| `test/host.optimize.test.mjs` | 提示词结构：素材在规则之前、禁令在最后、随机分界符、输出清理 |
+| `test/host.errors.test.mjs` | 鉴权、方法、请求体上限、字段上限、校验顺序、取消 |
+| `test/host.providers.test.mjs` | 模型目录过滤、默认模型回退、提供方失败 |
+| `test/host.context.test.mjs` | 长上下文摘要、缓存、摘要失败时的回退 |
+| `test/client.composer.test.mjs` | 读草稿、三条写回路径、诚实报告失败 |
+| `test/client.context.test.mjs` | 从界面读对话、截断、代理对不被切断 |
+| `test/client.providers.test.mjs` | 选择器数据：过滤、默认值、提示语 |
+| `test/client.optimize.test.mjs` | 请求本身、错误、取消、保住上一次的结果 |
+| `test/client.panel.test.mjs` | 布局、portal、按钮顺序、元信息展示 |
+| `test/client.lifecycle.test.mjs` | 插槽注册、样式由 `ctx.effect` 持有、卸载清理 |
 
 ## 已知限制
 

@@ -27,19 +27,16 @@ export const PREFIX = '/prompt-optimize-button-api'
 /**
  * Load the host half.
  *
- * The package is ESM, so the module is imported rather than required; the
- * `require` above is only used for the JSON fixtures.
+ * The entry is CommonJS because that is how DSH loads plugin entries; requiring
+ * it here exercises the same path the host takes. Dropping the require cache
+ * gives every host its own `modelCache` / `summaryCache` / `running` maps, which
+ * is what keeps tests from ordering each other. (A query-string `import()` does
+ * not work for this: CommonJS is cached by path and ignores the query, so every
+ * "fresh" import would hand back the same module state.)
  */
-let generation = 0
-
 export async function loadPlugin(options = {}) {
-  // A unique query string forces Node to re-evaluate the module, so every host
-  // gets its own `modelCache` / `summaryCache` / `running` maps. Test isolation
-  // beats the tiny re-compile cost, and it removes ordering coupling between
-  // tests that change what `listModels` answers.
-  if (options.fresh === false) return await import(ENTRY)
-  generation += 1
-  return await import(`${ENTRY}?v=${generation}`)
+  if (options.fresh !== false) delete require.cache[require.resolve(ENTRY)]
+  return require(ENTRY)
 }
 
 /** A catalog with text models, image models, an embedding model and a failure. */
@@ -114,7 +111,12 @@ export function fakeResponse() {
  *   sessionController: object, call: Function}>} the mounted host.
  */
 export async function createHost(options = {}) {
-  const plugin = await loadPlugin({ fresh: options.fresh })
+  // `lib/index.js` is CommonJS (the host loads plugin entries with `require`, and
+  // an ESM entry dies with ERR_REQUIRE_CYCLE_MODULE inside its loader cycle). A
+  // dynamic `import()` of a CJS file therefore hands back the namespace object
+  // with the real exports under `default` — normalise before touching `apply`.
+  const loaded = await loadPlugin({ fresh: options.fresh })
+  const plugin = typeof loaded.apply === 'function' ? loaded : loaded.default
   const routes = new Map()
   const calls = []
   const state = {

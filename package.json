@@ -4,7 +4,6 @@
   "description": "Rewrite a draft into a ready-to-send prompt before sending it, using any text model configured in DSH. Three modes: plain prompt, system prompt or persona, and revise an existing draft.",
   "license": "MIT",
   "icon": "./icon.svg",
-  "type": "module",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
@@ -25,7 +24,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test 'test/*.test.js'"
+    "test": "node --test 'test/*.test.mjs'"
   },
   "engines": {
     "dsh": ">=0.2.2-rc.2 <0.3.0"
