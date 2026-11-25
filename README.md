@@ -75,6 +75,11 @@ The bundle inserts itself as `prompt-optimize-button`; no manual editing of
 `cordis.patch.yml` is needed. Removing the bundle removes both halves — the
 button and its three routes.
 
+If you previously added the plugin to your profile by hand, delete that entry
+first. An `insert` of the same id is not de-duplicated: the composed entry list
+would carry the plugin twice and the loader would give the second copy a random
+id, so the button and its routes would be mounted twice.
+
 ## Use
 
 1. Type what you want in the composer, or paste it into the panel's text box.

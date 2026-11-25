@@ -47,6 +47,8 @@ plugin_manager  action: install_bundle  target: /path/to/dsh-prompt-optimize-but
 
 bundle 会以 `prompt-optimize-button` 这个 id 插入自己，不需要手工改 `cordis.patch.yml`。卸载 bundle 会同时移除前后端两半——按钮和它的三条路由。
 
+如果你以前在 profile 里手工加过这个插件，装 bundle 前先把那条删掉。同 id 的 `insert` 不会被去重：合成后的条目表会带两份，加载器会给第二份随机 id，于是按钮和三条路由都会挂两遍。
+
 ## 使用
 
 1. 在输入框里写下你想要什么，或者粘进面板的文本框。
