@@ -1,0 +1,4 @@
+- insert:
+    - id: prompt-optimize-button
+      name: dsh-prompt-optimize-button
+      config: {}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <!-- A composer draft: three lines of text inside a rounded frame. -->
+  <rect x="5" y="7" width="26" height="22" rx="4.5" stroke="#5b8def" stroke-width="2"/>
+  <path d="M10.5 13h12M10.5 17.5h13M10.5 22h7" stroke="#5b8def" stroke-width="2" stroke-linecap="round"/>
+  <!-- The rewrite: a four-point sparkle where the draft is being edited. -->
+  <path d="M25.5 18.8C26.1 21.2 27.3 22.4 29.7 23C27.3 23.6 26.1 24.8 25.5 27.2C24.9 24.8 23.7 23.6 21.3 23C23.7 22.4 24.9 21.2 25.5 18.8Z" fill="#eeb055"/>
+</svg>

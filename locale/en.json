@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Prompt optimize button",
+    "description": "A button at the left of the composer that rewrites your draft into a ready-to-send prompt using any text model configured in DSH. Three modes: plain prompt, system prompt or persona, and revise an existing draft; it can also attach recent conversation messages as reference.",
+    "detail": "docs/DETAIL.md"
+  }
+}
