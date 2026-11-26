@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Prompt optimize button",
-    "description": "A button at the left of the composer that rewrites your draft into a ready-to-send prompt using any text model configured in DSH. Three modes: plain prompt, system prompt or persona, and revise an existing draft; it can also attach recent conversation messages as reference.",
+    "title": "Prompt optimization button",
+    "description": "Click the sparkle to the left of the DSH Web composer. In the Chinese-language panel, select plain prompt, system prompt / persona, or revise a draft. Pick a text model and click 开始优化 (Start). Review the rewritten prompt, then fill the composer or copy it. No chat message is sent automatically. The selected model receives your draft and extra requirements; recent messages are included only if you enable conversation context. Long context may require a separate summarization request. Disabling the plugin removes the button and panel without removing the composer.",
     "detail": "docs/DETAIL.md"
   }
 }
